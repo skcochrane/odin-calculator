@@ -1,3 +1,11 @@
+// Variables
+//      Value 1
+//      Value 2
+//      Operator
+//      Buttons
+//      Display
+let display = document.querySelector(".display");
+
 // ADD function
 
 // SUBTRACT function

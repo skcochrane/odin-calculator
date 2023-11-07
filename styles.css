@@ -1,5 +1,5 @@
 * {
-  background-color: #f7f0f0;
+  background-color: #f1f1f1;
   font-family: "Andale Mono", courier, monospace;
   margin: 0;
   padding: 0;
@@ -8,7 +8,20 @@
 .calc-container {
   background-color: #283044;
   border-radius: 20px;
-  height: 550px;
+  height: 500px;
   margin: 50px auto;
-  width: 400px;
+  padding-top: 25px;
+  width: 450px;
+}
+
+.display {
+  background-color: #9ea2ac;
+  border-radius: 10px;
+  color: #191923;
+  font-size: 45px;
+  height: 40px;
+  margin: auto;
+  padding: 20px;
+  text-align: right;
+  width: 350px;
 }
