@@ -1,7 +1,9 @@
 // Variables
-//      Value 1
-//      Value 2
-//      Operator
+//      Value 1, Value 2, Operator
+let value1;
+let value2;
+let operator;
+
 //      Buttons
 let oneBtn = document.querySelector("#one-btn");
 let twoBtn = document.querySelector("#two-btn");
@@ -23,12 +25,25 @@ let equalBtn = document.querySelector("#equal-btn");
 //      Display
 let display = document.querySelector(".display");
 
-// ADD function
+// Mathematical functions
+function addition(value1, value2) {
+  let additionTotal = value1 + value2;
+  return additionTotal;
+}
 
-// SUBTRACT function
+function subtraction(value1, value2) {
+  let subtractionTotal = value1 - value2;
+  return subtractionTotal;
+}
 
-// MULTIPLY function
+function multiplication(value1, value2) {
+  let multiplicationTotal = value1 * value2;
+  return multiplicationTotal;
+}
 
-// DIVIDE function
+function division(value1, value2) {
+  let divisionTotal = value1 / value2;
+  return divisionTotal;
+}
 
 // OPERATE function -- equals button
