@@ -46,4 +46,27 @@ function division(value1, value2) {
   return divisionTotal;
 }
 
-// OPERATE function -- equals button
+// OPERATE function
+function operate(operator, value1, value2) {
+  if (operator === "add") {
+    equalBtn.addEventListener("click", function () {
+      addition(value1, value2);
+    });
+  } else if (operator === "subtract") {
+    equalBtn.addEventListener("click", function () {
+      subtraction(value1, value2);
+    });
+  } else if (operator === "multiply") {
+    equalBtn.addEventListener("click", function () {
+      multiplication(value1, value2);
+    });
+  } else if (operator === "divide") {
+    equalBtn.addEventListener("click", function () {
+      division(value1, value2);
+    });
+  }
+}
+
+function testing() {
+  console.log("this is a test");
+}
