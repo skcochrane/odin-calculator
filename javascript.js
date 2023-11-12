@@ -46,6 +46,23 @@ function division(value1, value2) {
   return divisionTotal;
 }
 
+// Operators event listeners
+plusBtn.addEventListener("click", function () {
+  operator = "add";
+});
+
+minusBtn.addEventListener("click", function () {
+  operator = "subtract";
+});
+
+multBtn.addEventListener("click", function () {
+  operator = "multiply";
+});
+
+divBtn.addEventListener("click", function () {
+  operator = "divide";
+});
+
 // OPERATE function
 function operate(operator, value1, value2) {
   if (operator === "add") {
@@ -65,8 +82,4 @@ function operate(operator, value1, value2) {
       division(value1, value2);
     });
   }
-}
-
-function testing() {
-  console.log("this is a test");
 }
