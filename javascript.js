@@ -1,67 +1,68 @@
 // Variables
-//      Value 1, Value 2, Operator
-let value1;
-let value2;
-let operator;
+
+//      Display
+let display = document.querySelector(".display");
 
 //      Buttons
 let oneBtn = document.querySelector("#one-btn");
-oneBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}1`;
-});
 let twoBtn = document.querySelector("#two-btn");
-twoBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}2`;
-});
 let threeBtn = document.querySelector("#three-btn");
-threeBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}3`;
-});
 let fourBtn = document.querySelector("#four-btn");
-fourBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}4`;
-});
 let fiveBtn = document.querySelector("#five-btn");
-fiveBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}5`;
-});
 let sixBtn = document.querySelector("#six-btn");
-sixBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}6`;
-});
 let sevenBtn = document.querySelector("#seven-btn");
-sevenBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}7`;
-});
 let eightBtn = document.querySelector("#eight-btn");
-eightBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}8`;
-});
 let nineBtn = document.querySelector("#nine-btn");
-nineBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}9`;
-});
 let zeroBtn = document.querySelector("#zero-btn");
-zeroBtn.addEventListener("click", function () {
-  display.textContent = `${display.textContent}0`;
-});
 let clearBtn = document.querySelector("#clear-btn");
-clearBtn.addEventListener("click", function () {
-  display.textContent = "";
-  value1 = "";
-  value2 = "";
-  operator = "";
-});
 let deleteBtn = document.querySelector("#delete-btn");
 let plusBtn = document.querySelector("#plus-btn");
 let minusBtn = document.querySelector("#minus-btn");
 let multBtn = document.querySelector("#mult-btn");
 let divBtn = document.querySelector("#div-btn");
 let equalBtn = document.querySelector("#equal-btn");
-//      Display
-let display = document.querySelector(".display");
 
-// Mathematical functions
+//      Value 1, Value 2, Operator
+let value1;
+let value2;
+let operator;
+
+// Event Listeners
+oneBtn.addEventListener("click", () => numberBtns(1));
+twoBtn.addEventListener("click", () => numberBtns(2));
+threeBtn.addEventListener("click", () => numberBtns(3));
+fourBtn.addEventListener("click", () => numberBtns(4));
+fiveBtn.addEventListener("click", () => numberBtns(5));
+sixBtn.addEventListener("click", () => numberBtns(6));
+sevenBtn.addEventListener("click", () => numberBtns(7));
+eightBtn.addEventListener("click", () => numberBtns(8));
+nineBtn.addEventListener("click", () => numberBtns(9));
+zeroBtn.addEventListener("click", () => numberBtns(0));
+
+plusBtn.addEventListener("click", () => operatorBtns("add", "+"));
+minusBtn.addEventListener("click", () => operatorBtns("minus", "−"));
+multBtn.addEventListener("click", () => operatorBtns("multiply", "×"));
+divBtn.addEventListener("click", () => operatorBtns("divide", "÷"));
+
+clearBtn.addEventListener("click", () => clear());
+
+// Functions
+function numberBtns(value) {
+  display.textContent = `${display.textContent}${value}`;
+}
+
+function operatorBtns(opName, opSymbol) {
+  operator = opName;
+  display.textContent = `${display.textContent}${opSymbol}`;
+}
+
+function clear() {
+  display.textContent = "0";
+  value1 = "";
+  value2 = "";
+  operator = "";
+}
+
 function addition(value1, value2) {
   let additionTotal = value1 + value2;
   return additionTotal;
@@ -82,44 +83,14 @@ function division(value1, value2) {
   return divisionTotal;
 }
 
-// Operators event listeners
-plusBtn.addEventListener("click", function () {
-  operator = "add";
-  display.textContent = `${display.textContent}+`;
-});
-
-minusBtn.addEventListener("click", function () {
-  operator = "subtract";
-  display.textContent = `${display.textContent}−`;
-});
-
-multBtn.addEventListener("click", function () {
-  operator = "multiply";
-  display.textContent = `${display.textContent}×`;
-});
-
-divBtn.addEventListener("click", function () {
-  operator = "divide";
-  display.textContent = `${display.textContent}÷`;
-});
-
-// OPERATE function
 function operate(operator, value1, value2) {
   if (operator === "add") {
-    equalBtn.addEventListener("click", function () {
-      addition(value1, value2);
-    });
+    equalBtn.addEventListener("click", () => addition(value1, value2));
   } else if (operator === "subtract") {
-    equalBtn.addEventListener("click", function () {
-      subtraction(value1, value2);
-    });
+    equalBtn.addEventListener("click", () => subtraction(value1, value2));
   } else if (operator === "multiply") {
-    equalBtn.addEventListener("click", function () {
-      multiplication(value1, value2);
-    });
+    equalBtn.addEventListener("click", () => multiplication(value1, value2));
   } else if (operator === "divide") {
-    equalBtn.addEventListener("click", function () {
-      division(value1, value2);
-    });
+    equalBtn.addEventListener("click", () => division(value1, value2));
   }
 }
