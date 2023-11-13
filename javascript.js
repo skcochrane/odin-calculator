@@ -47,7 +47,7 @@ divBtn.addEventListener("click", () => operatorBtns("divide", "÷"));
 clearBtn.addEventListener("click", () => clear());
 deleteBtn.addEventListener("click", () => del());
 
-// Functions
+// Button Functions
 function numberBtns(value) {
   display.textContent = `${display.textContent}${value}`;
 }
@@ -68,6 +68,11 @@ function del() {
   display.textContent = display.textContent.slice(0, -1);
 }
 
+// Values
+// If display = "" or "0", start value1 until an operator button is pushed. Once you hit "=", total = value1
+//Anything after an operator is pushed is value2
+
+// Mathematical Functions
 function addition(value1, value2) {
   let additionTotal = value1 + value2;
   return additionTotal;
@@ -84,8 +89,12 @@ function multiplication(value1, value2) {
 }
 
 function division(value1, value2) {
-  let divisionTotal = value1 / value2;
-  return divisionTotal;
+  if (value2 === 0) {
+    alert("You can't divide by 0!");
+  } else {
+    let divisionTotal = value1 / value2;
+    return divisionTotal;
+  }
 }
 
 function operate(operator, value1, value2) {
