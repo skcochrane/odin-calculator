@@ -46,6 +46,12 @@ zeroBtn.addEventListener("click", function () {
   display.textContent = `${display.textContent}0`;
 });
 let clearBtn = document.querySelector("#clear-btn");
+clearBtn.addEventListener("click", function () {
+  display.textContent = "";
+  value1 = "";
+  value2 = "";
+  operator = "";
+});
 let deleteBtn = document.querySelector("#delete-btn");
 let plusBtn = document.querySelector("#plus-btn");
 let minusBtn = document.querySelector("#minus-btn");
