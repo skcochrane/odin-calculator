@@ -45,6 +45,7 @@ multBtn.addEventListener("click", () => operatorBtns("multiply", "×"));
 divBtn.addEventListener("click", () => operatorBtns("divide", "÷"));
 
 clearBtn.addEventListener("click", () => clear());
+deleteBtn.addEventListener("click", () => del());
 
 // Functions
 function numberBtns(value) {
@@ -61,6 +62,10 @@ function clear() {
   value1 = "";
   value2 = "";
   operator = "";
+}
+
+function del() {
+  display.textContent = display.textContent.slice(0, -1);
 }
 
 function addition(value1, value2) {
