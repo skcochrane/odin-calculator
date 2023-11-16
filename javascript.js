@@ -26,6 +26,7 @@ let equalBtn = document.querySelector("#equal-btn");
 let value1;
 let value2;
 let operator;
+let total;
 
 // Event Listeners
 oneBtn.addEventListener("click", () => numberBtns(1));
@@ -43,18 +44,34 @@ plusBtn.addEventListener("click", () => operatorBtns("add", "+"));
 minusBtn.addEventListener("click", () => operatorBtns("minus", "−"));
 multBtn.addEventListener("click", () => operatorBtns("multiply", "×"));
 divBtn.addEventListener("click", () => operatorBtns("divide", "÷"));
+equalBtn.addEventListener("click", () => equal());
 
 clearBtn.addEventListener("click", () => clear());
 deleteBtn.addEventListener("click", () => del());
 
 // Button Functions
 function numberBtns(value) {
-  display.textContent = `${display.textContent}${value}`;
+  if (
+    display.textContent === "0" ||
+    display.textContent === "+" ||
+    display.textContent === "−" ||
+    display.textContent === "×" ||
+    display.textContent === "÷"
+  ) {
+    display.textContent = value;
+  } else {
+    display.textContent = `${display.textContent}${value}`;
+  }
 }
 
 function operatorBtns(opName, opSymbol) {
   operator = opName;
-  display.textContent = `${display.textContent}${opSymbol}`;
+  display.textContent = opSymbol;
+}
+
+function equal() {
+  display.textContent = total;
+  value1 = total;
 }
 
 function clear() {
@@ -74,26 +91,26 @@ function del() {
 
 // Mathematical Functions
 function addition(value1, value2) {
-  let additionTotal = value1 + value2;
-  return additionTotal;
+  total = value1 + value2;
+  return total;
 }
 
 function subtraction(value1, value2) {
-  let subtractionTotal = value1 - value2;
-  return subtractionTotal;
+  total = value1 - value2;
+  return total;
 }
 
 function multiplication(value1, value2) {
-  let multiplicationTotal = value1 * value2;
-  return multiplicationTotal;
+  total = value1 * value2;
+  return total;
 }
 
 function division(value1, value2) {
   if (value2 === 0) {
     alert("You can't divide by 0!");
   } else {
-    let divisionTotal = value1 / value2;
-    return divisionTotal;
+    let total = value1 / value2;
+    return total;
   }
 }
 

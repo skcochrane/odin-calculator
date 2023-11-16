@@ -7,7 +7,7 @@
 
 .btn {
   height: 70px;
-  margin: 10px 15px;
+  margin: 7px 12px;
   width: 70px;
 }
 
@@ -27,8 +27,8 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 600px;
-  margin: 50px auto;
+  height: 575px;
+  margin: 40px auto;
   padding-top: 20px;
   width: 450px;
 }
@@ -41,9 +41,9 @@
   background-color: #b0b4be;
   border-radius: 10px;
   color: #191923;
-  font-size: 36px;
+  font-size: 38px;
   height: 40px;
-  margin: auto;
+  margin: 25px auto;
   padding: 20px;
   text-align: right;
   width: 340px;
@@ -71,5 +71,5 @@
   color: #f1f1f1;
   font-size: 42px;
   margin-bottom: 30px;
-  width: 370px;
+  width: 355px;
 }
