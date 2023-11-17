@@ -25,7 +25,7 @@ let equalBtn = document.querySelector("#equal-btn");
 //      Value 1, Value 2, Operator
 let value1;
 let value2;
-let operator;
+let operator = "";
 let total;
 
 // Event Listeners
@@ -44,10 +44,35 @@ plusBtn.addEventListener("click", () => operatorBtns("add", "+"));
 minusBtn.addEventListener("click", () => operatorBtns("minus", "−"));
 multBtn.addEventListener("click", () => operatorBtns("multiply", "×"));
 divBtn.addEventListener("click", () => operatorBtns("divide", "÷"));
-equalBtn.addEventListener("click", () => equal());
+equalBtn.addEventListener("click", () => operate(operator, value1, value2));
 
 clearBtn.addEventListener("click", () => clear());
 deleteBtn.addEventListener("click", () => del());
+
+// Mathematical Functions
+function addition(value1, value2) {
+  total = value1 + value2;
+  equals();
+}
+
+function subtraction(value1, value2) {
+  total = value1 - value2;
+  equals();
+}
+
+function multiplication(value1, value2) {
+  total = value1 * value2;
+  equals();
+}
+
+function division(value1, value2) {
+  if (value2 === 0) {
+    alert("You can't divide by 0!");
+  } else {
+    total = value1 / value2;
+    equals();
+  }
+}
 
 // Button Functions
 function numberBtns(value) {
@@ -69,11 +94,6 @@ function operatorBtns(opName, opSymbol) {
   display.textContent = opSymbol;
 }
 
-function equal() {
-  display.textContent = total;
-  value1 = total;
-}
-
 function clear() {
   display.textContent = "0";
   value1 = "";
@@ -85,43 +105,24 @@ function del() {
   display.textContent = display.textContent.slice(0, -1);
 }
 
-// Values
-// If display = "" or "0", start value1 until an operator button is pushed. Once you hit "=", total = value1
-//Anything after an operator is pushed is value2
-
-// Mathematical Functions
-function addition(value1, value2) {
-  total = value1 + value2;
-  return total;
-}
-
-function subtraction(value1, value2) {
-  total = value1 - value2;
-  return total;
-}
-
-function multiplication(value1, value2) {
-  total = value1 * value2;
-  return total;
-}
-
-function division(value1, value2) {
-  if (value2 === 0) {
-    alert("You can't divide by 0!");
-  } else {
-    let total = value1 / value2;
-    return total;
-  }
-}
-
 function operate(operator, value1, value2) {
   if (operator === "add") {
-    equalBtn.addEventListener("click", () => addition(value1, value2));
+    return addition(value1, value2);
   } else if (operator === "subtract") {
-    equalBtn.addEventListener("click", () => subtraction(value1, value2));
+    return subtraction(value1, value2);
   } else if (operator === "multiply") {
-    equalBtn.addEventListener("click", () => multiplication(value1, value2));
+    return multiplication(value1, value2);
   } else if (operator === "divide") {
-    equalBtn.addEventListener("click", () => division(value1, value2));
+    return division(value1, value2);
   }
 }
+
+function equals() {
+  display.textContent = total;
+  return (value1 = total);
+}
+
+// Values
+
+// If display = "" or "0", start value1 until an operator button is pushed. Once you hit "=", total = value1
+//Anything after an operator is pushed is value2
